@@ -1,0 +1,10 @@
+import ar.com.armada.sipemm.GeneralRestResponse
+
+model {
+    GeneralRestResponse rta
+}
+
+
+json {
+    url rta.url
+}

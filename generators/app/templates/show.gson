@@ -1,0 +1,20 @@
+import <%= props.packageComponente %>.ListMetadata
+import <%= props.packageComponente %>.<%= props.nombreComponente %>
+
+
+model {
+    <%= props.nombreComponente %> <%= props.nombreComponente_var %>
+}
+json {
+    id                  <%= props.nombreComponente_var %>.id
+    <% if (props.conImagen) { %>
+    urlImagen           <%= props.nombreComponente_var %>.urlImagen
+    <% } %>
+    // incluir demas propiedades
+    <%= props.properties_view_show %>
+    dateDeleted         <%= props.nombreComponente_var %>.dateDeleted
+    motivoBaja_id       <%= props.nombreComponente_var %>.motivoBaja?.id
+}
+
+
+

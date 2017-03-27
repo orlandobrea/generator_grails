@@ -1,0 +1,8 @@
+Este archivo de texto es de prueba y contiene las variables que seleccionaste
+
+Archivos a generar
+- <%= props.nombreComponente %>
+- <%= props.nombreComponente %>Service
+- <%= props.nombreComponente %>RestController
+
+Esta embebido en otro componente: <%= props.embebido %> / <%= props.someAnswer %>

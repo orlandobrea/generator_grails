@@ -1,0 +1,24 @@
+import <%= props.packageComponente %>.ListMetadata
+import <%= props.packageComponente %>.<%= props.nombreComponente %>
+
+model {
+    List list
+    ListMetadata metadata
+}
+
+response.status OK
+
+json {
+    metadata metadata
+    results(list) { <%= props.nombreComponente %> unObjeto ->
+        id  unObjeto.id
+        <% if (props.conImagen) { %>
+        urlImagen unObjeto.urlImagen
+        <% } %>
+        // incluir demas propiedades
+        <%= props.properties_view_index %>
+        dateDeleted unObjeto.dateDeleted
+        motivoBaja_id unObjeto.motivoBaja?.id
+    }
+
+}
