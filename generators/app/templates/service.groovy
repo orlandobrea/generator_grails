@@ -22,7 +22,7 @@ class <%= props.nombreComponente %>Service extends BaseService {
      * Trae el <%= props.nombreComponente %> (si existe) para el (<%= props.nombreComponentePadre %>.id pasado como parametro
      */
     <%= props.nombreComponente %> get<%= props.nombreComponente %>Por<%= props.nombreComponentePadre %>(<%= props.nombreComponentePadre_var %>_id){
-    	return <%= props.nombreComponente %>.get<%= props.nombreComponente %>Por<%= props.nombreComponentePadre %>(<%= props.nombreComponentePadre_var %>_id).getRegistro()
+    	return <%= props.nombreComponente %>.get<%= props.nombreComponente %>Por<%= props.nombreComponentePadre %>(<%= props.nombreComponentePadre_var %>_id).get()
     }
     <% } %>
 

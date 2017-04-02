@@ -1,5 +1,5 @@
 import <%= props.packageComponente %>.ListMetadata
-import <%= props.packageComponente %>.<%= props.nombreComponente %>
+import <%= props.packageComponente %>.<%= props.nombreComponente %>Historico
 
 model {
     List list
@@ -10,12 +10,12 @@ response.status OK
 
 json {
     metadata metadata
-    results(list) { <%= props.nombreComponente %> unObjeto ->
+    results(list) { <%= props.nombreComponente %>Historico unObjeto ->
         id  unObjeto.id
         <% if (props.conImagen) { %>
         urlImagen unObjeto.urlImagen
         <% } %>
-        // Incluir demas propiedades
+        <%= props.properties_view_index %>
         dateDeleted unObjeto.dateDeleted
         motivoBaja_id unObjeto.motivoBaja?.id
     }

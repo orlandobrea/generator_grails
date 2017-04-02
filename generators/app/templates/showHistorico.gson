@@ -1,19 +1,19 @@
 import <%= props.packageComponente %>.ListMetadata
-import <%= props.packageComponente %>.<%= props.nombreComponente %>
+import <%= props.packageComponente %>.<%= props.nombreComponente %>Historico
 
 
 model {
-    <%= props.nombreComponente %> <%= props.nombreComponente_var %>
+    <%= props.nombreComponente %>Historico <%= props.nombreComponente_var %>Historico
 }
 json {
-    id                  <%= props.nombreComponente_var %>.id
+    id                  <%= props.nombreComponente_var %>Historico.id
     <% if (props.conImagen) { %>
-    urlImagen           <%= props.nombreComponente_var %>.urlImagen
+    urlImagen           <%= props.nombreComponente_var %>Historico.urlImagen
     <% } %>
     // incluir demas propiedades
-    <%= props.properties_view_index %>
-    dateDeleted         <%= props.nombreComponente_var %>.dateDeleted
-    motivoBaja_id       <%= props.nombreComponente_var %>.motivoBaja?.id
+    <%= props.properties_view_show_historico %>
+    dateDeleted         <%= props.nombreComponente_var %>Historico.dateDeleted
+    motivoBaja_id       <%= props.nombreComponente_var %>Historico.motivoBaja?.id
 }
 
 

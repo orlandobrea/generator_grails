@@ -118,12 +118,13 @@ module.exports = Generator.extend({
     });
 
     this.props.properties_view_show = '';  
+    this.props.properties_view_show_historico = '';  
     this.props.properties_view_index = '';
     this.props.properties.forEach(function(prop) {
       let bEsOtroDomain = true;
       if (prop.indexOf('String')>-1)
         bEsOtroDomain = false;
-            if (prop.indexOf('Integer')>-1)
+      if (prop.indexOf('Integer')>-1)
         bEsOtroDomain = false;
       if (prop.indexOf('Long')>-1)
         bEsOtroDomain = false;
@@ -136,14 +137,21 @@ module.exports = Generator.extend({
       if (prop.indexOf('Time')>-1)
         bEsOtroDomain = false;
       
+      let partes = prop.split(' ');
       if (bEsOtroDomain) { // Tengo que mostrarlo embebido en el json
-        let partes = prop.split(' ');
         _this.props.properties_view_show += '_'+partes[1]+'  {\n\t\t id: '+_this.props.nombreComponente_var+'.'+partes[1]+'.id\n\t}'; 
+        _this.props.properties_view_show_historico += '_'+partes[1]+'  {\n\t\t id: '+_this.props.nombreComponente_var+'Historico.'+partes[1]+'.id\n\t}'; 
         _this.props.properties_view_index += '_'+partes[1]+'  {\n\t\t id: unObjeto.'+partes[1]+'.id,\n\t\t descripcion: unObjeto.'+partes[1]+'.descripcion\n\t}'; 
       }
       else {
-        _this.props.properties_view_show += prop+';\n\t'; // Normal 
-        _this.props.properties_view_index += prop+';\n\t'; // Normal 
+        //_this.props.properties_view_show += prop+';\n\t'; // Normal 
+        //_this.props.properties_view_show_historico += prop+';\n\t'; // Normal 
+        //_this.props.properties_view_index += prop+';\n\t'; // Normal 
+
+
+        _this.props.properties_view_show += partes[1]+'  \t\t '+_this.props.nombreComponente_var+'.'+partes[1]+'\n\t'; 
+        _this.props.properties_view_show_historico += partes[1]+'  \t\t '+_this.props.nombreComponente_var+'Historico.'+partes[1]+'\n\t'; 
+        _this.props.properties_view_index += '\t'+partes[1]+'  \t\t unObjeto.'+partes[1]+'\n\t'; 
       }
     });
 

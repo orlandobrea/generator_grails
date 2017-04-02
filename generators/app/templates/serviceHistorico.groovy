@@ -20,8 +20,8 @@ class <%= props.nombreComponente %>HistoricoService extends BaseService {
     /**
      * Trae el <%= props.nombreComponente %> (si existe) para el (<%= props.nombreComponentePadre %>.id pasado como parametro
      */
-    <%= props.nombreComponente %> list<%= props.nombreComponente %>Por<%= props.nombreComponentePadre %>(<%= props.nombreComponentePadre_var %>_id){
-    	return <%= props.nombreComponente %>.list<%= props.nombreComponente %>Por<%= props.nombreComponentePadre %>(<%= props.nombreComponentePadre_var %>_id).list()
+    List<<%= props.nombreComponente %>Historico> list<%= props.nombreComponente %>Por<%= props.nombreComponentePadre %>(<%= props.nombreComponentePadre_var %>_id){
+    	return <%= props.nombreComponente %>Historico.list<%= props.nombreComponente %>Por<%= props.nombreComponentePadre %>(<%= props.nombreComponentePadre_var %>_id).list()
     }
     <% } %>
 

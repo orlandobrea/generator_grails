@@ -9,6 +9,8 @@ class <%= props.nombreComponente %>Historico {
 	<% if (props.conImagen) { %>
 	String urlImagen
 	<% } %>
+    <%= props.properties_domain %>
+
 	Date dateCreated
     Date dateDeleted
     UsuarioInterno creadoPor
@@ -37,7 +39,7 @@ class <%= props.nombreComponente %>Historico {
 
     <% if (props.nombreComponentePadre) { %>
     static def list<%= props.nombreComponente %>Por<%= props.nombreComponentePadre %>(<%= props.nombreComponentePadre_var %>_id) {
-            <%= props.nombreComponente %>.where {
+            <%= props.nombreComponente %>Historico.where {
                 (<%= props.nombreComponentePadre_var %>.id == <%= props.nombreComponentePadre_var %>_id)
             }
     }
